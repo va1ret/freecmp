@@ -8,6 +8,7 @@ import json
 
 def parse_request_uri(environ):
 	return environ['REQUEST_URI'].split('/')
+
 def application(environ, start_response):
 	status = '200 OK'
 	output = 'freecmp: '+json.dumps(parse_request_uri(environ)[1:])
